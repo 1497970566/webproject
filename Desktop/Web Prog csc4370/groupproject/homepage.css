@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+.container {
+  height: 100%;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+
+section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  scroll-snap-align: start;
+  text-align: center;
+  padding: 2rem;
+  color: #fff;
+}
+
+.one {
+background-image: url('image/home1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white; 
+  font-size: 100px;
+}
+
+.two {
+  background-color: #1e1e3f;
+}
+
+.three {
+  background-color: #ffcc00;
+  color: #1e1e3f;
+}
+
+.four {
+  background-color: #c0c0fd;
+  color: #1e1e3f;
+}
+
+/* Start button styling */
+.start-button {
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  background-color: #ffcc00;
+  color: #1e1e3f;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.start-button:hover {
+  background-color: #ffe066;
+}

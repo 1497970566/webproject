@@ -1,0 +1,36 @@
+.body{
+
+  font-family: sans-serif;
+
+
+}
+table {
+  font-family: sans-serif;
+  width: 1000px;
+  height: 1000px;
+}
+
+
+.navbar{
+
+color: blueviolet;
+  background-color: #1e1e3f;
+  padding: 10px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  front-color: white;
+    font-family: sans-serif;
+
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 3px;
+
+}
+
+li {
+  display: inline;
+}
