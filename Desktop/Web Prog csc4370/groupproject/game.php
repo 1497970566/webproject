@@ -1,6 +1,5 @@
 <?php
 session_start();
-// Sample questions for demonstration (Category 1 only)
 $questions = [
     1 => [
         100 => [
@@ -24,7 +23,6 @@ $questions = [
             'options' => ['mars', 'venus', 'earth', 'jupiter']
         ],
     ],
-    // Add more categories as needed
 ];
 
 if (!isset($_SESSION['scores'])) {
@@ -39,7 +37,6 @@ if (!isset($_SESSION['answered'])) {
     $_SESSION['answered'] = [];
 }
 
-// Handle answer submission
 if (isset($_POST['submit_answer'])) {
     $cat = (int)$_POST['cat'];
     $val = (int)$_POST['val'];
@@ -53,9 +50,7 @@ if (isset($_POST['submit_answer'])) {
     } else {
         $message = "Incorrect. The correct answer was: $correctAnswer.";
     }
-    // Mark as answered
     $_SESSION['answered']["$cat-$val"] = true;
-    // Move to next player's turn
     $_SESSION['turn'] = ($_SESSION['turn'] + 1) % count($players);
     header("Location: game.php?msg=" . urlencode($message));
     exit;
@@ -70,15 +65,18 @@ if (isset($_POST['submit_answer'])) {
   <link rel="stylesheet" href="https://codd.cs.gsu.edu/~wou1/wp/pw/01/game.css">
 </head>
 <?php
-// Determine if we are showing a question
 $showingQuestion = isset($_GET['category']) && isset($_GET['value']) && isset($questions[(int)$_GET['category']][(int)$_GET['value']]);
 ?>
 <body<?= $showingQuestion ? ' class="question-active"' : '' ?>>
+
 
   <div class="navbar">
   <nav>
     <ul>
       <li><a href="https://codd.cs.gsu.edu/~wou1/wp/pw/01/homepage.html">Home</a></li>
+      <li class="navbar-logo">
+        <img src="https://codd.cs.gsu.edu/~wou1/wp/pw/01/image/logol.png" alt="Jeopardy Game">
+      </li>
       <?php
       if (isset($_SESSION['players'])) {
           echo '<li class="player-display">Players: ';
@@ -97,12 +95,16 @@ $showingQuestion = isset($_GET['category']) && isset($_GET['value']) && isset($q
 </div>
 
 <?php
-// Show feedback message if present
 if (isset($_GET['msg'])) {
-    echo "<div style='text-align:center; color:green; font-weight:bold; margin-top:20px;'>" . htmlspecialchars($_GET['msg']) . "</div>";
+    $msg = $_GET['msg'];
+    echo "<div class='feedback-message'>" . htmlspecialchars($msg) . "</div>";
+    if (stripos($msg, 'correct') !== false) {
+        echo "<div class='feedback-correct'><img src='https://codd.cs.gsu.edu/~wou1/wp/pw/01/image/correct.webp' alt='Correct!'></div>";
+    }
 }
+?>
 
-// Show question and answer form if a value is clicked
+<?php
 if (isset($_GET['category']) && isset($_GET['value'])) {
     $cat = (int)$_GET['category'];
     $val = (int)$_GET['value'];
@@ -152,6 +154,6 @@ if (isset($_GET['category']) && isset($_GET['value'])) {
       echo '</tr>';
   }
   ?>
-</table>
+  </table>
 </body> 
 </html>
