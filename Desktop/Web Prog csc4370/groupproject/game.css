@@ -1,36 +1,117 @@
-.body{
-
-  font-family: sans-serif;
-
-
+body.question-active {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
+.question-form {
+  background: rgba(255,255,255,0.85);
+  padding: 32px;
+  border-radius: 18px;
+  display: center;
+  margin-top: 40px;
+  margin-left: 100px;
+  text-align: center;
+  width: 800px;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url('https://codd.cs.gsu.edu/~wou1/wp/pw/01/image/setup.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+}
+
 table {
   font-family: sans-serif;
   width: 1000px;
-  height: 1000px;
+  height: 900px;
+  margin-top: 100px;
+  background-color: rgba(255, 255, 255, 0.682);
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 20px;
+  overflow: hidden;
 }
 
+td, th {
+  border-radius: 12px;
+}
 
-.navbar{
+td a {
+  display: block;
+  color: #FFD700;
+  font-size: 2.2rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  padding: 30px 0;
+  transition: color 0.2s;
+}
 
-color: blueviolet;
+td a:hover {
+  color: #ffcc00;
+}
+
+.navbar {
   background-color: #1e1e3f;
   padding: 10px;
-  text-align: center;
-  font-size: 20px;
-  font-weight: bold;
-  front-color: white;
-    font-family: sans-serif;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  font-family: sans-serif;
 
 }
 
-ul {
+.navbar ul {
   list-style-type: none;
   margin: 0;
-  padding: 3px;
+  padding: 0;
+  font-family: sans-serif;
 
 }
 
-li {
-  display: inline;
+.navbar li {
+  display: inline-block;
+  padding: 8px 16px;
+  font-family: sans-serif;
+
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: sans-serif;
+
+}
+
+.player-display {
+  float: right;
+  background-color: rgba(255, 204, 0, 0.2);
+  border-radius: 20px;
+  margin-right: 20px;
+  color: white;
+  font-weight: normal;
+  font-family: sans-serif;
+
+}
+
+
+
+.question-form h2,
+.question-form p,
+.question-form label {
+  color: #222;
+}
+
+.question-form button {
+  margin-top: 16px;
 }

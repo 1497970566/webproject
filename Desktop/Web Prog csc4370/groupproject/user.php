@@ -1,4 +1,7 @@
 <?php
+session_start();
+// Always reset game state when entering user.php
+unset($_SESSION['scores'], $_SESSION['turn'], $_SESSION['answered']);
 $errors = [];
 $player1 = $player2 = $player3 = $player4 = '';
 
@@ -12,7 +15,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($player2)) $errors[] = "Player 2 is required.";
 
   if (empty($errors)) {
-    session_start();
     $_SESSION['players'] = [
       'player1' => $player1,
       'player2' => $player2,
@@ -24,15 +26,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Jeopardy Setup</title>
-  <link rel="stylesheet" href="https://codd.cs.gsu.edu/~wou1/wp/ct/php/setup.css">
+  <title>Navbar Example</title>
+  <link rel="stylesheet" href="https://codd.cs.gsu.edu/~wou1/wp/pw/01/user.css">
 </head>
 <body>
+  <div class="navbar">
+    <nav>
+      <ul>
+        <li><a href="https://codd.cs.gsu.edu/~wou1/wp/pw/01/homepage.html">Home</a></li>
+    
+      </ul>
+    </nav>
+  </div>
   <div class="setup-container">
     <h1>Player Setup</h1>
 
@@ -64,3 +73,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   </div>
 </body>
 </html>
+

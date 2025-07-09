@@ -29,7 +29,7 @@ section {
 }
 
 .one {
-background-image: url('image/home1.jpg');
+background-image: url('https://codd.cs.gsu.edu/~wou1/wp/pw/01/image/home1.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
