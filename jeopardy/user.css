@@ -1,0 +1,154 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+
+}
+
+body {
+  background-image: url('https://codd.cs.gsu.edu/~wou1/wp/pw/jeopardy/image/setup.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  color: white;
+  font-family: sans-serif;
+
+}
+
+.navbar {
+ background-color: #1e1e3fa3;
+  padding: 10px;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  font-family: sans-serif;
+}
+
+.navbar nav {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.navbar ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 20px;
+  list-style: none;
+  margin: 0;
+  height: 56px;
+  position: relative;
+}
+
+.navbar-logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.navbar-logo img {
+  height: 50px;
+  width: auto;
+}
+
+.navbar li {
+  display: inline-block;
+  padding: 8px 16px;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.15rem;
+  transition: color 0.2s;
+}
+
+.navbar a:hover {
+  color: #ffcc00;
+}
+
+
+
+
+
+.player-display {
+  margin-left: auto;
+  background-color: rgba(255, 204, 0, 0.2);
+  border-radius: 20px;
+  padding: 6px 18px;
+  color: #fff;
+  font-weight: normal;
+  font-size: 1.05rem;
+  font-family: sans-serif;
+
+
+}
+
+.setup-container {
+  background: rgba(255, 255, 255, 0.34);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3.6px);
+  -webkit-backdrop-filter: blur(3.6px);
+  border: 1px solid rgba(255, 255, 255, 0.46);
+  width: 90%;              
+  max-width: 800px;      
+  padding: 2rem 3rem;      
+  margin: 2rem auto;
+  margin-top: 80px; 
+  color: white
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+label {
+  margin-top: 1rem;
+  display: block;
+  font-weight: bold;
+  color: white
+
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 0.7rem;
+  margin-top: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+button {
+  margin-top: 1.5rem;
+  width: 100%;
+  padding: 1rem;
+  background-color: #ffcc00;
+  color: #1e1e3f;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ffe066;
+}
+
+.error-box {
+  background-color: #ffe0e0;
+  color: #a33;
+  border: 1px solid #a33;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
