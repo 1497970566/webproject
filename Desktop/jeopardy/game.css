@@ -1,0 +1,246 @@
+body.question-active {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.question-form {
+  background: rgba(255, 255, 255, 0.571);
+  padding: 32px;
+  border-radius: 18px;
+  display: center;
+  margin-top: 40px;
+  margin-left: 100px;
+  text-align: center;
+  width: 800px;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url('https://codd.cs.gsu.edu/~wou1/wp/pw/jeopardy/image/setup.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+}
+
+
+table {
+  font-family: sans-serif;
+  width: 1000px;
+  height: 900px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  background-color: rgba(255, 255, 255, 0.682);
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+td, th {
+  border-radius: 12px;
+}
+
+td a {
+  display: block;
+  color: #FFD700;
+  font-size: 2.2rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  padding: 30px 0;
+  transition: color 0.2s;
+}
+
+td a:hover {
+  color: #ffcc00;
+}
+
+.navbar {
+  background-color: #1e1e3fa3;
+  padding: 10px;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  font-family: sans-serif;
+
+}
+
+.navbar ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 32px;
+  list-style: none;
+  margin: 0;
+  height: 56px;
+}
+
+.navbar-logo {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar-logo img {
+  max-height: 40px;
+  width: auto;
+  display: block;
+  margin-left: 288px;
+}
+
+.navbar li {
+  display: inline-block;
+  padding: 8px 16px;
+  font-family: sans-serif;
+  margin-right: 50px;
+
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: sans-serif;
+
+}
+
+.player-display {
+  float: right;
+  background-color: rgba(255, 204, 0, 0.693);
+  border-radius: 20px;
+  color: white;
+  font-weight: normal;
+  font-family: sans-serif;
+
+}
+
+
+
+.question-form h2,
+.question-form p,
+.question-form label {
+  color: #222;
+}
+
+.question-form button {
+  margin-top: 16px;
+}
+
+.feedback-message {
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  margin-top: 90px; 
+  margin-bottom: 10px;
+  z-index: 10;
+  position: relative;
+}
+
+h1, h2 {
+  margin-top: 0px;
+}
+
+.feedback-correct {
+  text-align: center;
+  margin-top: 0px;
+}
+
+.feedback-correct img {
+  max-width: 120px;
+  margin: 0 auto;
+  display: block;
+}
+
+.feedback-wrong {
+  text-align: center;
+  margin-top: 0px;
+}
+
+.feedback-wrong img {
+  max-width: 120px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.game-over {
+  background-color: rgba(0, 0, 0, 0.85);
+  color: white;
+  padding: 40px;
+  text-align: center;
+  border-radius: 20px;
+  margin: 60px auto;
+  width: 70%;
+}
+
+.game-over h1 {
+  font-size: 3rem;
+  color: #FFD700;
+  margin-bottom: 20px;
+}
+
+.game-over h2 {
+  font-size: 2rem;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.reset-button {
+  display: inline-block;
+  padding: 12px 20px;
+  margin-top: 20px;
+  background-color: #FFD700;
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: background-color 0.3s;
+}
+
+.reset-button:hover {
+  background-color: #ffcc00;
+}
+
+@keyframes popUp {
+  0% {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.game-over h1 {
+  animation: popUp 0.5s ease-out;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-100px) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.money {
+  position: fixed;
+  width: 40px;
+  height: auto;
+  top: -50px;
+  z-index: 9999;
+  pointer-events: none;
+  animation: fall 4s linear infinite;
+}

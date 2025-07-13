@@ -1,0 +1,110 @@
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: sans-serif;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    .container {
+      height: 100%;
+      overflow-y: scroll;
+      scroll-snap-type: y mandatory;
+      position: relative;
+    }
+
+    section {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      scroll-snap-align: start;
+      text-align: center;
+      padding: 2rem;
+      color: #fff;
+      animation: fadeIn 1s forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+   
+    .logo-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .logo {
+      max-width: 300px;
+      height: auto;
+      animation: float 3s ease-in-out infinite;
+      transform-origin: center;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-15px) rotate(3deg); }
+    }
+
+    .pulse-text {
+      display: inline-block;
+      color: #ffcc00;
+      animation: pulse 1.5s infinite;
+      transform-origin: center;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+
+    .two .pulse-text {
+      text-shadow: 0 0 8px rgba(255, 204, 0, 0.7);
+    }
+
+    .one {
+      background-image: url('https://codd.cs.gsu.edu/~wou1/wp/pw/jeopardy/image/home1.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: white; 
+      font-size: 100px;
+      transition: background-position 5s ease;
+    }
+
+    .one:hover {
+      background-position: 20% center;
+    }
+
+    .two { background-color: #1e1e3f; }
+    .three { background-color: #ffcc00; color: #1e1e3f; }
+    .four { background-color: #c0c0fd; color: #1e1e3f; }
+
+    .start-button {
+      margin-top: 2rem;
+      padding: 1rem 2rem;
+      background-color: #ffcc00;
+      color: #1e1e3f;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      transform: scale(1);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .start-button:hover {
+      background-color: #ffe066;
+      transform: scale(1.05);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
